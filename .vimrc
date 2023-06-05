@@ -1,5 +1,5 @@
 let mapleader = " "
-set number 
+set number
 set relativenumber
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -63,9 +63,9 @@ let g:netrw_liststyle = 3 " explorer tree view
 autocmd FileType javascript,typescript,html,css setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 
-" --------------------------------------- 
+" ---------------------------------------
 " --------- CUSTOM COLORSCHEME ----------
-" --------------------------------------- 
+" ---------------------------------------
 highlight vimEscape guifg=#dd9046
 highlight netrwSymLink guifg=#c75ae8
 highlight netrwExe guifg=#8bcd5b
@@ -108,7 +108,7 @@ highlight Exception guifg=#c75ae8
 highlight Include guifg=#c75ae8
 highlight Define guifg=#c75ae8
 highlight Macro guifg=#f65866
-highlight Special guifg=#2a324a 
+highlight Special guifg=#2a324a
 highlight Tag guifg=#8bcd5b
 highlight SpecialChar guifg=#f65866
 highlight Delimiter guifg=#6c7d9c
@@ -160,16 +160,47 @@ fu! WhatMode()
 endf
 
 
+let g:show_os_icon = 0
+
+fu! WhatOS()
+  if has('win32') || has('win64')
+    if g:show_os_icon == 1
+        return ''
+    else
+        return 'windows'
+    endif
+
+  elseif has('unix') || has('linux')
+    if g:show_os_icon == 1
+        return ''
+    else
+        return 'unix'
+    endif
+
+  else
+    if g:show_os_icon == 1
+        return ''
+    else
+        return 'mac'
+    endif
+
+  endif
+
+endf
+
 
 " ----------------------------------------------
 " ----------- CUSTOM STATUS LINE ---------------
 " ----------------------------------------------
 highlight Dark guibg=#2a324a guifg=#93a4c3
 highlight LightGray guibg=#a0a8b7 guifg=#1A212E
+
 set statusline=
 set statusline+=\%#ModeMsg#\ %{WhatMode()}
 set statusline+=\ %#Dark#\ %F
 set statusline+=\%=
+set statusline+=\ %{WhatOS()}
+set statusline+=\ \|\ %{&fileencoding}\ \|
 set statusline+=\ %Y
-set statusline+=\ %#LightGray#\ BN:%n
+set statusline+=\ %#LightGray#\ buf:%n
 set statusline+=\ %#ModeMsg#\ %l:%L\ 
