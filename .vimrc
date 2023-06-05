@@ -118,7 +118,7 @@ highlight Visual ctermbg=242 guibg=#2a324a guifg=NONE
 highlight link JavaScriptBraces Delimiter
 highlight link javaScriptParens Delimiter
 
-highlight link htmlEndTag Function
+highlight link htmlEndTag htmlTag
 highlight htmlH1 guifg=#93a4c3
 highlight htmlH2 guifg=#93a4c3
 highlight htmlH3 guifg=#93a4c3
