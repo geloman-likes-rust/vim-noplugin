@@ -31,6 +31,7 @@ nnoremap L Lzz
 
 "toggle filetree
 nnoremap <silent> <leader>e <esc>:Lex<cr>
+nnoremap <silent> <leader>! :-1read $HOME/.vim/snippets/skeleton.html<cr>9jf<
 
 
 " Tweaks for browsing
