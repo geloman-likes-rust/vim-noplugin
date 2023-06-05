@@ -19,11 +19,14 @@ set timeoutlen=300
 set updatetime=250
 set history=200
 set noshowmode
-set path+=**
+set path+=** " search down into subfolders
 set laststatus=2
 set termguicolors
 colorscheme slate
 syntax on
+
+let g:enable_trasparent = 1
+let g:show_os_icon = 0
 
 " Set cursor shape
 let &t_SI = "\<Esc>[6 q"
@@ -35,13 +38,24 @@ let &t_EI = "\<Esc>[2 q"
 nnoremap G Gzz
 nnoremap H Hzz
 nnoremap L Lzz
+nnoremap <leader>gd <C-]>
+nnoremap <leader>n :bnext<cr> 
+nnoremap <leader>s :silent! ctags -R .<cr>
+
+" toggle code snippet suggestion
+inoremap <C-G> <C-X><C-N>
+inoremap <tab> <C-N>
+inoremap <s-tab> <C-P>
 
 " toggle filetree
 nnoremap <silent> <leader>e <esc>:Lex 20<cr>
+
 " html template
-" nnoremap <silent> <leader>! :-1read $HOME/.vim/snippets/skeleton.html<cr>9jf<
+nnoremap <silent> <leader>! :-1read $HOME/.vim/snippets/skeleton.html<cr>9jf<
+
 " show currently opened buffers
 nnoremap <silent> <leader><space> :buffers<cr>
+
 " auto pair brackets && quotations
 inoremap <silent> { {}<esc>i
 inoremap <silent> [ []<esc>i
@@ -51,6 +65,7 @@ inoremap <silent> ( ()<esc>i
 " inoremap <silent> " ""<esc>i
 " inoremap <silent> < <><esc>i
 
+" command! MakeTags !ctags -R .
 
 " Tweaks for file browsing
 let g:netrw_banner = 0 " disable explorer banner
@@ -76,15 +91,11 @@ highlight vimNotation guifg=#dd9046
 highlight CursorLineNR ctermfg=11 guifg=NONE guibg=#2a324a
 highlight CursorLine ctermfg=11 guifg=NONE guibg=#2a324a
 highlight Comment guifg=#455574
-highlight Normal guibg=#1A212E guifg=#93a4c3
 highlight StatusLine guibg=#a0a8b7 guifg=#1A212E
 highlight Question guifg=#cc9057
 highlight Directory guifg=#4fa6ed
-highlight VertSplit guifg=#2a324a guibg=#1A212E
 highlight IncSearch guibg=#d99a5e
-highlight EndOfBuffer guifg=#1A212E
 highlight MatchParen guibg=#2a324a guifg=NONE
-highlight LineNr guifg=#455574
 highlight Type guifg=#f65866
 highlight Pmenu guifg=#e55561
 highlight PmenuSel guifg=#e55561
@@ -114,6 +125,19 @@ highlight SpecialChar guifg=#f65866
 highlight Delimiter guifg=#6c7d9c
 highlight Visual ctermbg=242 guibg=#2a324a guifg=NONE
 
+if g:enable_trasparent == 1
+    highlight Normal guifg=#93a4c3 ctermbg=NONE guibg=NONE
+    highlight VertSplit guifg=#2a324a guibg=NONE ctermbg=NONE
+    highlight EndOfBuffer guifg=#455574
+    highlight LineNr guifg=#93a4c3
+else
+    highlight Normal guibg=#1A212E guifg=#93a4c3
+    highlight VertSplit guifg=#2a324a guibg=#1A212E
+    highlight EndOfBuffer guifg=#1A212E
+    highlight LineNr guifg=#455574
+endif
+
+
 " language specific colorscheme
 highlight link JavaScriptBraces Delimiter
 highlight link javaScriptParens Delimiter
@@ -126,6 +150,10 @@ highlight htmlH4 guifg=#93a4c3
 highlight htmlH5 guifg=#93a4c3
 highlight htmlH6 guifg=#93a4c3
 highlight htmlTitle guifg=#93a4c3
+highlight Pmenu guifg=#c75ae8 guibg=#1A212E
+highlight PmenuSel guifg=#c75ae8 guibg=#2a324a
+highlight PmenuThumb guibg=#4fa6ed
+highlight PmenuSbar guibg=#2a324a
 
 
 fu! WhatMode()
@@ -159,8 +187,6 @@ fu! WhatMode()
     endif
 endf
 
-
-let g:show_os_icon = 0
 
 fu! WhatOS()
   if has('win32') || has('win64')
