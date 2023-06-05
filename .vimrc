@@ -119,13 +119,13 @@ highlight link JavaScriptBraces Delimiter
 highlight link javaScriptParens Delimiter
 
 highlight link htmlEndTag Function
-highlight htmlH1 guifg=#ffffff
-highlight htmlH2 guifg=#ffffff
-highlight htmlH3 guifg=#ffffff
-highlight htmlH4 guifg=#ffffff
-highlight htmlH5 guifg=#ffffff
-highlight htmlH6 guifg=#ffffff
-highlight htmlTitle guifg=#ffffff
+highlight htmlH1 guifg=#93a4c3
+highlight htmlH2 guifg=#93a4c3
+highlight htmlH3 guifg=#93a4c3
+highlight htmlH4 guifg=#93a4c3
+highlight htmlH5 guifg=#93a4c3
+highlight htmlH6 guifg=#93a4c3
+highlight htmlTitle guifg=#93a4c3
 
 
 fu! WhatMode()
