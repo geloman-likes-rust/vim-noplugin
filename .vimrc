@@ -76,7 +76,7 @@ highlight vimNotation guifg=#dd9046
 highlight CursorLineNR ctermfg=11 guifg=NONE guibg=#2a324a
 highlight CursorLine ctermfg=11 guifg=NONE guibg=#2a324a
 highlight Comment guifg=#455574
-highlight Normal guibg=#1A212E
+highlight Normal guibg=#1A212E guifg=#93a4c3
 highlight StatusLine guibg=#a0a8b7 guifg=#1A212E
 highlight Question guifg=#cc9057
 highlight Directory guifg=#4fa6ed
@@ -84,7 +84,7 @@ highlight VertSplit guifg=#2a324a guibg=#1A212E
 highlight IncSearch guibg=#d99a5e
 highlight EndOfBuffer guifg=#1A212E
 highlight MatchParen guibg=#2a324a guifg=NONE
-highlight LineNr guifg=#93a4c3
+highlight LineNr guifg=#455574
 highlight Type guifg=#f65866
 highlight Pmenu guifg=#e55561
 highlight PmenuSel guifg=#e55561
