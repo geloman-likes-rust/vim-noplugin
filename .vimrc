@@ -25,7 +25,7 @@ set termguicolors
 colorscheme slate
 syntax on
 
-let g:enable_trasparent = 1
+let g:enable_trasparent = 0
 let g:show_os_icon = 0
 
 " Set cursor shape
@@ -75,28 +75,34 @@ let g:netrw_liststyle = 3 " explorer tree view
 
 
 " Set language specific indentation
-autocmd FileType javascript,typescript,html,css setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType javascript,javascriptreact,typescriptreact,typescript,html,css setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 
 " ---------------------------------------
 " --------- CUSTOM COLORSCHEME ----------
 " ---------------------------------------
-highlight vimEscape guifg=#dd9046
+
 highlight netrwSymLink guifg=#c75ae8
 highlight netrwExe guifg=#8bcd5b
+highlight netrwPlain guifg=#93a4c3
+highlight netrwTreeBar guifg=#455574
+highlight netrwClassify guifg=#4fa6ed
+
+highlight vimEscape guifg=#dd9046
 highlight vimContinue guifg=#dd9046
 highlight vimFuncSID guifg=#dd9046
-highlight netrwClassify guifg=#4fa6ed
 highlight vimNotation guifg=#dd9046
+
 highlight CursorLineNR ctermfg=11 guifg=NONE guibg=#2a324a
 highlight CursorLine ctermfg=11 guifg=NONE guibg=#2a324a
+
+highlight Type guifg=#efbd5d
 highlight Comment guifg=#455574
 highlight StatusLine guibg=#a0a8b7 guifg=#1A212E
 highlight Question guifg=#cc9057
 highlight Directory guifg=#4fa6ed
 highlight IncSearch guibg=#d99a5e
 highlight MatchParen guibg=#2a324a guifg=NONE
-highlight Type guifg=#f65866
 highlight Pmenu guifg=#e55561
 highlight PmenuSel guifg=#e55561
 highlight WildMenu guibg=#e55561
@@ -137,11 +143,38 @@ else
     highlight LineNr guifg=#455574
 endif
 
+" -----------------------------------------------
+" ------- LANGUAGE SPECIFIC COLORSCHEME ---------
+" -----------------------------------------------
+" --------------- JS,TS,JSX,TSX -----------------
+autocmd FileType javascript,typescript,javascriptreact,typescriptreact 
+    \ highlight Normal guifg=#93a4c3 |
+    \ highlight Special guifg=#c75ae8 |
+    \ highlight Identifier guifg=#c75ae8 |
+    \ highlight htmlTag guifg=#c75ae8 |
+    \ highlight link htmlTagName htmlTag |
+    \ highlight JavaScriptBraces guifg=#6c7d9c |
+    \ highlight link javaScriptParens JavascriptBraces |
+    \ highlight javaScriptValue guifg=#4fa6ed |
+    \ highlight Structure guifg=#e55561 |
+    \ highlight Type guifg=#efbd5d |
+    \ highlight PreProc guifg=#e55561 |
+    \ highlight link typescriptBraces JavascriptBraces |
+    \ highlight link typescriptParens JavascriptParens |
+    \ highlight typescriptObjectColon guifg=#ffffff |
+    \ highlight typescriptArrowFunc guifg=#93a4c3 |
+    \ highlight typescriptClassName guifg=#efbd5d |
+    \ highlight typescriptIdentifierName guifg=#93a4c3 |
+    \ highlight typescriptVariableDeclaration guifg=#4fa6ed |
+    \ highlight tsxEqual guifg=#93a4c3 |
+    \ highlight tsxTagName guifg=#efbd5d |
+    \ highlight typescriptFuncName guifg=#4fa6ed |
 
-" language specific colorscheme
-highlight link JavaScriptBraces Delimiter
-highlight link javaScriptParens Delimiter
 
+" -----------------------------------------------
+" ------- LANGUAGE SPECIFIC COLORSCHEME ---------
+" -----------------------------------------------
+" ------------------- HTML ----------------------
 highlight link htmlEndTag htmlTag
 highlight htmlH1 guifg=#93a4c3
 highlight htmlH2 guifg=#93a4c3
@@ -149,11 +182,25 @@ highlight htmlH3 guifg=#93a4c3
 highlight htmlH4 guifg=#93a4c3
 highlight htmlH5 guifg=#93a4c3
 highlight htmlH6 guifg=#93a4c3
+highlight htmlArg guifg=#efbd5d
 highlight htmlTitle guifg=#93a4c3
 highlight Pmenu guifg=#c75ae8 guibg=#1A212E
 highlight PmenuSel guifg=#c75ae8 guibg=#2a324a
 highlight PmenuThumb guibg=#4fa6ed
 highlight PmenuSbar guibg=#2a324a
+
+
+" -----------------------------------------------
+" ------- LANGUAGE SPECIFIC COLORSCHEME ---------
+" -----------------------------------------------
+" -------------------- CSS ----------------------
+highlight cssClassName guifg=#4fa6ed
+highlight cssClassNameDot guifg=#4fa6ed
+highlight cssIdentifier guifg=#4fa6ed
+highlight cssBraces guifg=#4fa6ed
+highlight cssProp guifg=#efbd5d
+
+
 
 
 fu! WhatMode()
