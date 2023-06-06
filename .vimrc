@@ -40,7 +40,7 @@ nnoremap H Hzz
 nnoremap L Lzz
 nnoremap <leader>gd <C-]>
 nnoremap <leader>n :bnext<cr> 
-nnoremap <leader>s :silent! ctags -R .<cr>
+nnoremap <leader>s :!ctags -R .
 
 " toggle code snippet suggestion
 inoremap <C-G> <C-X><C-N>
