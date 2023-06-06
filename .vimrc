@@ -60,10 +60,10 @@ nnoremap <silent> <leader><space> :buffers<cr>
 inoremap <silent> { {}<esc>i
 inoremap <silent> [ []<esc>i
 inoremap <silent> ( ()<esc>i
-" inoremap <silent> ` ``<esc>i
-" inoremap <silent> ' ''<esc>i
-" inoremap <silent> " ""<esc>i
-" inoremap <silent> < <><esc>i
+inoremap <silent> ` ``<esc>i
+inoremap <silent> ' ''<esc>i
+inoremap <silent> " ""<esc>i
+inoremap <silent> < <><esc>i
 
 " command! MakeTags !ctags -R .
 
