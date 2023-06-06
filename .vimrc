@@ -103,7 +103,7 @@ highlight Question guifg=#cc9057
 highlight Directory guifg=#4fa6ed
 highlight IncSearch guibg=#d99a5e
 highlight MatchParen guibg=#2a324a guifg=NONE
-highlight Pmenu guifg=#e55561
+"highlight Pmenu guifg=#e55561
 highlight PmenuSel guifg=#e55561
 highlight WildMenu guibg=#e55561
 highlight ErrorMsg guifg=#f65866
@@ -184,10 +184,6 @@ highlight htmlH5 guifg=#93a4c3
 highlight htmlH6 guifg=#93a4c3
 highlight htmlArg guifg=#efbd5d
 highlight htmlTitle guifg=#93a4c3
-highlight Pmenu guifg=#c75ae8 guibg=#1A212E
-highlight PmenuSel guifg=#c75ae8 guibg=#2a324a
-highlight PmenuThumb guibg=#4fa6ed
-highlight PmenuSbar guibg=#2a324a
 
 
 " -----------------------------------------------
@@ -201,6 +197,11 @@ highlight cssBraces guifg=#4fa6ed
 highlight cssProp guifg=#efbd5d
 
 
+" ----------- POPUP MENU COLORSCHEME ------------
+highlight Pmenu guifg=#4fa6ed guibg=#2a324a
+highlight PmenuSel guifg=#2a324a guibg=#4fa6ed
+highlight PmenuThumb guibg=#4fa6ed
+highlight PmenuSbar guibg=#1a324a
 
 
 fu! WhatMode()
